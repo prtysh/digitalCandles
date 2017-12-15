@@ -1,4 +1,4 @@
-Snowflake[] flakes;
+Candles[] candle;
 int count;
 int distance = 10;
 
@@ -6,22 +6,22 @@ void setup(){
   stroke(255);
   size(400,400);
   count = width/distance+1;
-  flakes = new Snowflake[count];
+  candle = new Candles[count];
   for (int i = 0; i<count; i++){
-    flakes[i] = new Snowflake(i*10,height - height/8,100);
+    candle[i] = new Candles(i*10,height - height/8,100);
   } 
 }
 
 void draw(){
   background(0);
   for (int i = 0; i<count; i++){
-    flakes[i].pen();
+    candle[i].pen();
   }
-  println( (flakes[1].life/ flakes[1].totalLife));
+  println( (candle[1].life/ candle[1].totalLife));
 }
-class Snowflake { 
+class Candles { 
   float xpos, ypos, size, life, totalLife, maxSize; 
-  Snowflake (float tempxpos, float tempypos, float tempsize){
+  Candles (float tempxpos, float tempypos, float tempsize){
     xpos = tempxpos;
     ypos = tempypos;
     maxSize = random(0.85*tempsize, 1.15*tempsize);
